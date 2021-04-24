@@ -1,5 +1,5 @@
 resource "aws_instance" "vm01"{
-  instance_type = t2.micro
+  instance_type = "t2.micro"
   ami = data.aws_ami.std_ami.id
 }
 
