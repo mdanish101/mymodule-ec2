@@ -1,17 +1,8 @@
-resource "aws_instance" "vm01"{
+resource aws_instance "vm02" {
+  ami = "ami-05d72852800cbf29e"
   instance_type = "t2.micro"
-  ami = data.aws_ami.std_ami.id
-}
-
-data "aws_ami" "std_ami" {
-  most_recent = true
-  owners      = ["amazon"]
-filter {
-    name   = "root-device-type"
-    values = ["ebs"]
-  }
-filter {
-    name   = "name"
-    values = ["amzn2-ami-hvm-2.0*"]
+  provider = aws.region2
+   tags = {
+      name = "vm02"
   }
 }
