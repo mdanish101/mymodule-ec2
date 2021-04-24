@@ -1,7 +1,8 @@
-resource aws_instance "vm02" {
-  ami = "ami-05d72852800cbf29e"
-  instance_type = "t2.micro"
+resource "aws_iam_user" "lb" {
+  name = "loadbalancer"
+  path = "/system/"
+
   tags = {
-      name = "vm02"
+    tag-key = "tag-value"
   }
 }
